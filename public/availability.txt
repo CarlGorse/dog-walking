@@ -11,7 +11,4 @@
 # 2026-11-06|morning|0|3
 # 2026-11-04|evening
 2026-10-24|morning|3|0
-2026-10-25|morning|1|2
-2026-10-25|evening
-2026-11-01|evening
 2026-11-06|morning|0|3

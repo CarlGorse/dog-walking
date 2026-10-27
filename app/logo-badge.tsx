@@ -31,7 +31,7 @@ export default function LogoBadge({ className }: { className?: string }) {
           {siteConfig.tagline}
         </textPath>
       </text>
-      <AlfieIcon x="22" y="24" width="56" height="56" />
+      <AlfieIcon x="18" y="23" width="64" height="64" />
     </svg>
   );
 }
