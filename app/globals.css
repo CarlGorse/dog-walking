@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f7f1e8;
+  --foreground: #1f1a17;
+}
+
+@theme {
+  --color-amber-50: #faf7f2;
+  --color-amber-100: #f2ece1;
+  --color-amber-200: #e4d9c6;
+  --color-amber-300: #d4b97f;
+  --color-amber-400: #c4a05f;
+  --color-amber-500: #b0853b;
+  --color-amber-600: #946a2b;
+  --color-amber-700: #7a5626;
+  --color-amber-800: #614322;
+  --color-amber-900: #4a3319;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+section[id] {
+  scroll-margin-top: 4.5rem;
+}
+
+@media (min-width: 80rem) {
+  section[id] {
+    scroll-margin-top: 7.5rem;
+  }
+}
+
+.content-container {
+  width: 100%;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+.content-card {
+  border: 1px solid #e7e5e4;
+  border-radius: 2rem;
+  background: #fff;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.1), 0 1px 2px rgb(0 0 0 / 0.06);
+}
+
+.content-card-compact {
+  border-radius: 1rem;
+}
+
+@media (min-width: 64rem) {
+  .content-container {
+    padding-inline: 2rem;
+  }
+}
