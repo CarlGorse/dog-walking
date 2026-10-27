@@ -26,7 +26,7 @@ const faqs: { category: Category; question: string; answer: string | string[] }[
     answer: [
       "Solo walks are open to any dog, whatever their breed, age or situation.",
       "To keep group walks safe and relaxed, we only take dogs who are at least a year old, and male dogs need to be neutered. We can’t take females in a group while they are in season.",
-      "Because of the crate space in our van, the largest breeds we can take on group walks are Labradors and German Shepherds. Anything bigger is very welcome on a solo walk.",
+      "Because of the crate space in our van, the largest breeds we can take on any walk where we drive them in the van are Labradors and German Shepherds.",
       "Nervous dogs are very welcome on any walk. We’re happy to help build their confidence at their own pace.",
     ],
   },
@@ -36,32 +36,32 @@ const faqs: { category: Category; question: string; answer: string | string[] }[
     answer: "Yes. Dogs must have up-to-date vaccinations, and flea and worm treatments.",
   },
   {
-    category: "Safety and care",
-    question: "Are you insured?",
-    answer: "Yes. We are covered with business and liability insurance, including transporting dogs in our van.",
-  },
-  {
     category: "Booking and payment",
-    question: "How are prices worked out, and is there a discount for more than one dog?",
+    question: "What are the prices if I have more than one dog?",
     answer: "Prices are per dog, per walk. Discounts are available when two or more dogs from the same household join a walk.",
   },
   {
     category: "Booking and payment",
     question: "Do I need to meet you before the first walk?",
-    answer: "Yes. Before we start, I’ll come to your home for a meet and greet so we can get to know each other, and I can learn about your dog.",
+    answer: "Yes. Before we start, I’ll come to you for a meet and greet so we can get to know each other, and I can learn about your dog and your particular requirements.",
   },
   {
     category: "Booking and payment",
     question: "How and when do I pay?",
-    answer: "Payment is made up front.",
+    answer: "We ask for payment up front, and if you’re ever unhappy with a walk, we’re happy to refund you.",
   },
   {
     category: "Booking and payment",
     question: "What if I need to cancel?",
     answer: [
-      "We’d prefer to not have cancellations but we understand plans can change. You can cancel without any penalty.",
-      "If cancellations become frequent we'll have a chat with you to work out the best arrangement for you and the business.",
+      "We’d prefer to not have cancellations but we understand plans can change. You can cancel at any time without penalty.",
+      "If cancellations become frequent we'll have a chat to work out an arrangement that works for the both of us.",
     ],
+  },
+  {
+    category: "Safety and care",
+    question: "Are you insured?",
+    answer: "Yes. We are covered with business and liability insurance, including transporting dogs in our van.",
   },
   {
     category: "Walks",
@@ -81,7 +81,7 @@ const faqs: { category: Category; question: string; answer: string | string[] }[
   {
     category: "Safety and care",
     question: "Can I keep track of my dog during a walk?",
-    answer: "Each dog wears their own tracker, which you can monitor from your phone.",
+    answer: "Yes. Each dog wears their own tracker, which you can monitor from your phone.",
   },
   {
     category: "Walks",
@@ -106,6 +106,12 @@ const faqs: { category: Category; question: string; answer: string | string[] }[
 export default function FaqList() {
   const [selected, setSelected] = useState<(typeof categories)[number]>("All");
   const visibleFaqs = selected === "All" ? faqs : faqs.filter((faq) => faq.category === selected);
+  const sections: { title: Category | null; items: typeof faqs }[] =
+    selected === "All"
+      ? categories
+          .filter((category): category is Category => category !== "All")
+          .map((category) => ({ title: category, items: faqs.filter((faq) => faq.category === category) }))
+      : [{ title: null, items: visibleFaqs }];
 
   return (
     <>
@@ -131,18 +137,41 @@ export default function FaqList() {
       </div>
 
       <div className="mt-6 space-y-4">
-        {visibleFaqs.map((faq, index) => (
-          <article
-            key={faq.question}
-            className={`content-card content-card-compact border-l-[6px]! border-l-emerald-700! border-amber-200! shadow-md ${
-              index % 2 === 0 ? "bg-white!" : "bg-emerald-100!"
-            }`}
-          >
-            <h2 className="text-lg font-bold text-stone-900">{faq.question}</h2>
-            {(Array.isArray(faq.answer) ? faq.answer : [faq.answer]).map((line) => (
-              <p key={line} className="mt-2 leading-7 text-stone-600">{line}</p>
-            ))}
-          </article>
+        {sections.map((section) => (
+          <div key={section.title ?? "all"} className="space-y-4">
+            {section.title && (
+              <h2 className="pt-4 text-sm font-black uppercase tracking-wide text-emerald-800">{section.title}</h2>
+            )}
+            {section.items.map((faq) => {
+              const index = sections.flatMap((s) => s.items).indexOf(faq);
+              return (
+                <details
+                  key={faq.question}
+                  name="faq"
+                  className={`group content-card content-card-compact border-l-[6px]! border-l-emerald-700! border-amber-200! shadow-md transition hover:shadow-lg ${
+                    index % 2 === 0 ? "bg-white!" : "bg-emerald-100!"
+                  }`}
+                >
+                  <summary className="flex cursor-pointer list-none items-start justify-between gap-4 [&::-webkit-details-marker]:hidden">
+                    <h3 className="text-lg font-bold text-stone-900">{faq.question}</h3>
+                    <span
+                      aria-hidden="true"
+                      className="mt-1.5 flex h-5 w-5 shrink-0 items-center justify-center text-stone-400 transition group-hover:text-emerald-700 group-open:rotate-180"
+                    >
+                      <svg viewBox="0 0 20 20" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="m5 8 5 5 5-5" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </span>
+                  </summary>
+                  <div className="mt-3 border-t border-amber-200 pt-1">
+                    {(Array.isArray(faq.answer) ? faq.answer : [faq.answer]).map((line) => (
+                      <p key={line} className="mt-2 leading-7 text-stone-600">{line}</p>
+                    ))}
+                  </div>
+                </details>
+              );
+            })}
+          </div>
         ))}
       </div>
     </>

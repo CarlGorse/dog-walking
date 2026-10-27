@@ -9,7 +9,13 @@ export default function LogoBadge({ className }: { className?: string }) {
         <path id="badge-arc-bottom" d="M 7 50 A 43 43 0 0 0 93 50" />
       </defs>
       <circle cx="50" cy="50" r="48" className="fill-amber-300" />
-      <circle cx="50" cy="50" r="48" className="fill-none stroke-amber-100" strokeWidth="3" />
+      <circle
+        cx="50"
+        cy="50"
+        r="48"
+        className="fill-none stroke-amber-100"
+        strokeWidth="3"
+      />
       <circle cx="50" cy="52" r="32" className="fill-amber-200" />
       <text
         className="fill-amber-900 font-black uppercase"

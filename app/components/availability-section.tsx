@@ -7,26 +7,26 @@ const availability = [
     icon: "🌅",
     times: "Friday and Saturday",
     price: "£16",
-    walkTime: "1.5 to 2 hours walking",
-    pickupTime: "Pickup by 08:30, earliest return 11:30",
+    walkTime: "Approx 2 hours walking",
+    pickupTime: "Pickups from 08:00, returns from 11:30",
   },
   {
     title: "Afternoon group walks",
     icon: "☀️",
     times: "Friday and Saturday",
     price: "£16",
-    walkTime: "1.5 to 2 hours walking",
-    pickupTime: "Pickup by 13:30, earliest return 16:30",
+    walkTime: "Approx 2 hours walking",
+    pickupTime: "Pickups from 12:30, returns from 16:00",
   },
   {
     title: "Evening solo walks",
     icon: "🌙",
     price: "£12",
-    unit: "for the hour *",
-    extraDetail: "then £4 for any extra half hour",
+    unit: "for the first hour *",
+    extraDetail: "then £4 per half hour after",
     times: "Any day",
-    window: "Between 17:00 and 21:00",
-    footnote: "* Includes any transport time from your home.",
+    window: "Between 17:30 and 21:00",
+    footnote: "* from when we leave your place",
   },
 ];
 
@@ -85,15 +85,11 @@ export default function AvailabilitySection() {
                 )}
               </div>
               <div className="mt-4 space-y-1.5 border-t border-amber-200 pt-4 text-sm font-medium text-stone-600">
-                {slot.walkTime && <p>{slot.walkTime}</p>}
-                {slot.window && <p>{slot.window}</p>}
                 {slot.pickupTime && <p>{slot.pickupTime}</p>}
+                {slot.window && <p>{slot.window}</p>}
+                {slot.walkTime && <p>{slot.walkTime}</p>}
+                {slot.footnote && <p>{slot.footnote}</p>}
               </div>
-              {slot.footnote && (
-                <p className="mt-3 text-xs font-normal text-stone-500">
-                  {slot.footnote}
-                </p>
-              )}
             </div>
           ))}
         </div>
