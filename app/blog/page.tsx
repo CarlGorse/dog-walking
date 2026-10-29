@@ -22,10 +22,10 @@ const articles = [
     category: "Getting started",
     title: `Starting ${siteConfig.name}`,
     paragraphs: [
-      `${siteConfig.name} is still at the very beginning. I haven’t started walking other people’s dogs yet; right now I’m planning the business and working out which walks to offer, and at what times of day they will       work best.`,
-            `For now I’m juggling this alongside another job, which is why ${siteConfig.name} won’t be full time just yet. I’m going to see how things go, and I’d love it to become a full-time thing one day.`,
-      "I’m also a little anxious about Alfie. He’s used to having his walks to himself, and I’m not sure how he’ll feel about sharing them with his dad and some other dogs. And, slightly funnily, I keep wondering how I’m going to wash muddy dogs down after a walk with limited resources in a van!",
-      `I don’t have a success story to tell just yet. I’d like this blog to be an honest record of getting ready, what I learn along the way, and how ${siteConfig.name} grows from an idea into a real dog-walking business.`,
+      `${siteConfig.name} is still at the very beginning. We haven’t started walking other people’s dogs yet; right now we’re planning the business and working out which walks to offer, and at what times of day they will work best.`,
+      `For now we’re part-time, which is why ${siteConfig.name} won’t be full time just yet. We’re going to see how things go, and we’d love it to become a full-time thing one day.`,
+      "We’re also a little anxious about Alfie. He’s used to having his walks to himself, and we’re not sure how he’ll feel about sharing them with his dad and some other dogs. And, slightly funnily, we keep wondering how we’re going to wash muddy dogs down after a walk with limited resources in a van!",
+      `We don’t have a success story to tell just yet. We’d like this blog to be an honest record of getting ready, what we learn along the way, and how ${siteConfig.name} grows from an idea into a real dog-walking business.`,
     ],
   },
 ];

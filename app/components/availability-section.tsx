@@ -1,32 +1,46 @@
+import Link from "next/link";
 import SectionHeading from "./section-heading";
-import AlfieIcon from "../alfie-icon";
 
 const availability = [
   {
-    title: "Morning group walks",
+    period: "Morning",
+    title: "Long country walk",
     icon: "🌅",
     times: "Friday and Saturday",
-    price: "£16",
-    walkTime: "Approx 2 hours walking",
-    pickupTime: "Pickups from 08:00, returns from 11:30",
+    price: "£20",
+    priceNote: "Reduced price when we have a group",
+    duration: "2 hours",
+    durationDetails: "of walking, plus travel time.",
+    pickupTime: "Pickup time from 08:00, return time from 11:30",
+    note: "Up to 3 dogs per walk",
+    householdNote: "Dogs may be from different households",
   },
   {
-    title: "Afternoon group walks",
+    period: "Afternoon",
+    title: "Long country walk",
     icon: "☀️",
     times: "Friday and Saturday",
-    price: "£16",
-    walkTime: "Approx 2 hours walking",
-    pickupTime: "Pickups from 12:30, returns from 16:00",
+    price: "£20",
+    priceNote: "Reduced price when we have a group",
+    duration: "2 hours",
+    durationDetails: "of walking, plus travel time.",
+    pickupTime: "Pickup time from 12:30, return time from 16:00",
+    note: "Up to 3 dogs per walk",
+    householdNote: "Dogs may be from different households",
   },
   {
-    title: "Evening solo walks",
+    period: "Evening",
+    title: "Short local walk",
     icon: "🌙",
     price: "£12",
-    unit: "for the first hour *",
-    extraDetail: "then £4 per half hour after",
-    times: "Any day",
+    priceNote: "Reduced price when we have a group",
+    times: "Any evening",
+    days: "(Mon to Sun)",
     window: "Between 17:30 and 21:00",
-    footnote: "* from when we leave your place",
+    note: "Up to 2 dogs per walk",
+    householdNote: "Dogs may be from different households",
+    duration: "1 hour",
+    durationDetails: "of walking.",
   },
 ];
 
@@ -38,19 +52,20 @@ export default function AvailabilitySection() {
           eyebrow="Walks and prices"
           title="Find a walk and time that works for you."
         />
-        <div className="mt-4 flex max-w-2xl items-start gap-3 rounded-md border border-amber-200 bg-amber-50 px-4 py-3">
-          <AlfieIcon className="mt-1 h-8 w-8 shrink-0" />
-          <p className="text-sm leading-6 text-stone-700">
-            <span className="font-bold text-amber-900">For now,</span> we run
-            Out and About part-time, with group walks on Fridays and Saturdays.
-            Looking for a different day? Evening solo walks are available every
-            day, and we will add more group days as we grow.
+        <div className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-2 rounded-2xl bg-emerald-900 px-5 py-4 text-white">
+          <span className="text-2xl" aria-hidden="true">
+            ❄️
+          </span>
+          <p className="text-xl font-black sm:text-2xl">Winter schedule</p>
+          <p className="text-sm font-medium text-emerald-100">
+            Now until the end of March. A spring and summer schedule will
+            follow.
           </p>
         </div>
-        <div className="mt-10 grid gap-6 xl:grid-cols-3">
+        <div className="mt-6 grid gap-6 xl:grid-cols-3">
           {availability.map((slot) => (
             <div
-              key={slot.title}
+              key={slot.period ?? slot.title}
               className="content-card border-amber-200 bg-gradient-to-br from-white to-amber-50 transition-shadow hover:shadow-lg xl:row-span-5 xl:grid xl:grid-rows-subgrid xl:gap-y-0"
             >
               <div className="flex items-center gap-3">
@@ -60,39 +75,69 @@ export default function AvailabilitySection() {
                 >
                   {slot.icon}
                 </span>
-                <p className="whitespace-nowrap text-sm font-bold uppercase tracking-[0.1em] text-amber-800">
-                  {slot.title}
-                </p>
+                <div>
+                  {slot.period && (
+                    <p className="text-xs font-bold uppercase tracking-[0.1em] text-amber-800">
+                      {slot.period}
+                    </p>
+                  )}
+                  <p
+                    className={
+                      slot.period
+                        ? "text-base font-semibold text-stone-600"
+                        : "text-sm font-bold uppercase tracking-[0.1em] text-amber-800"
+                    }
+                  >
+                    {slot.title}
+                  </p>
+                </div>
               </div>
               <h3 className="mt-4 text-2xl font-black text-stone-900">
                 {slot.times}
+                {slot.days && (
+                  <span className="text-base font-semibold"> {slot.days}</span>
+                )}
               </h3>
               <div className="mt-2">
-                <p className="flex items-baseline gap-2 leading-none">
+                <p className="leading-none">
                   <span className="text-4xl font-black text-emerald-700">
                     {slot.price}
                   </span>
-                  {slot.unit && (
-                    <span className="text-base font-bold text-emerald-700">
-                      {slot.unit}
-                    </span>
-                  )}
                 </p>
-                {slot.extraDetail && (
-                  <p className="text-sm font-medium leading-6 text-emerald-800/80">
-                    {slot.extraDetail}
+                {slot.priceNote && (
+                  <p className="mt-1 text-sm font-bold text-emerald-800">
+                    {slot.priceNote}
                   </p>
                 )}
               </div>
-              <div className="mt-4 space-y-1.5 border-t border-amber-200 pt-4 text-sm font-medium text-stone-600">
-                {slot.pickupTime && <p>{slot.pickupTime}</p>}
-                {slot.window && <p>{slot.window}</p>}
-                {slot.walkTime && <p>{slot.walkTime}</p>}
-                {slot.footnote && <p>{slot.footnote}</p>}
-              </div>
+              <ul className="mt-4 list-disc space-y-3 border-t border-amber-200 pt-4 pl-5 text-sm font-medium text-stone-600 marker:text-amber-500">
+                {slot.duration && (
+                  <li>
+                    Around{" "}
+                    <span className="rounded-md bg-amber-100 px-2 py-1 font-bold text-amber-900">
+                      {slot.duration}
+                    </span>{" "}
+                    {slot.durationDetails}
+                  </li>
+                )}
+                {slot.note && <li>{slot.note}</li>}
+                {slot.householdNote && <li>{slot.householdNote}</li>}
+                {slot.pickupTime && <li>{slot.pickupTime}</li>}
+                {slot.window && <li>{slot.window}</li>}
+              </ul>
             </div>
           ))}
         </div>
+        <p className="mt-8 text-center text-base font-medium text-stone-700">
+          Want more details? Have a read of our{" "}
+          <Link
+            href="/faqs"
+            className="font-bold text-emerald-800 underline underline-offset-4 hover:text-emerald-600"
+          >
+            FAQs
+          </Link>
+          .
+        </p>
       </div>
     </section>
   );

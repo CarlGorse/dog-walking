@@ -6,7 +6,7 @@ export default function ContactSection() {
           <div className="content-container flex flex-col items-center justify-between gap-6 text-center text-white lg:flex-row lg:text-left">
         <div className="max-w-xl">
               <SectionHeading eyebrow="Get in touch" title="Bookings or questions?" tone="light" />
-              <p className="mt-3 text-base leading-7 text-emerald-50">WhatsApp or call me to book a walk or ask anything else.</p>
+              <p className="mt-3 text-base leading-7 text-emerald-50">WhatsApp or call us to book a walk or ask anything else.</p>
         </div>
         <div className="flex flex-col gap-3 sm:flex-row">
           <a
@@ -15,7 +15,7 @@ export default function ContactSection() {
             rel="noopener noreferrer"
             className="rounded-full bg-white px-6 py-3 text-center text-sm font-bold text-emerald-900 transition hover:bg-emerald-50"
           >
-            WhatsApp me
+            WhatsApp us
           </a>
           <a
             href="tel:+4475817983387"

@@ -3,9 +3,9 @@ import SectionHeading from "./section-heading";
 
 const services = [
   {
-    title: "Group and solo walks",
+    title: "Long and short walks",
     description:
-      "Friendly small groups, or a dedicated walk focused entirely on your dog.",
+          "Long country walks that may be in a friendly small group or one-to-one, and short walks in your local area.",
     icon: "🐾",
   },
   {
@@ -72,7 +72,7 @@ export default function ServicesSection() {
           ))}
         </div>
         <p className="mt-8 text-center text-base font-medium text-stone-700">
-          Want the full details? Have a read of our{" "}
+          Want more details? Have a read of our{" "}
           <Link
             href="/faqs"
             className="font-bold text-emerald-800 underline underline-offset-4 hover:text-emerald-600"

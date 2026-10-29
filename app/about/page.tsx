@@ -31,7 +31,7 @@ export default function AboutPage() {
             <SectionHeading eyebrow="Carl" title="Head of Walks & Wanders" />
             <div className="mt-5 space-y-4 text-lg leading-8 text-stone-700">
               <p>
-                Carl is the business manager and the dog walker, alongside his main office job.
+                Carl is the business manager and the dog walker, alongside his main job.
               </p>
               <p>
                 Between him and Alfie they have covered a lot of miles, often two or three walks a day during the working week, and on holidays too, from the Peak District, the Lake District and Dartmoor to many an Area of Outstanding Natural Beauty (AONB).
@@ -48,7 +48,7 @@ export default function AboutPage() {
                   <div className="max-w-2xl md:order-2">
             <SectionHeading eyebrow="Dawn" title="Guardian of the Books & Details" tone="light" />
             <p className="mt-4 text-lg leading-8 text-emerald-50">
-              Dawn is my wife and helps behind the scenes, including taking care of the business accounts, alongside her own main job in finance. She&apos;s also our quality assurance, making sure everything we do is up to scratch.
+              Dawn is Carl&apos;s wife and helps behind the scenes, including taking care of the business accounts, alongside her own main job in finance. She&apos;s also our quality assurance, making sure everything we do is up to scratch.
             </p>
           </div>
           <figure className="md:order-1 md:justify-self-start">

@@ -1,14 +1,11 @@
-# Walk slot availability
-# One row per date and slot: YYYY-MM-DD|slot|spaces_available|spaces_taken
-# Dates need two-digit months and days (2026-11-01, not 2026-11-1) or the row is ignored.
-# Slots: morning, afternoon, evening
-# Group walks (morning, afternoon): enter the number of available spaces first, then the number taken.
-# For group walks, 0 available spaces means no spaces are available.
-# Group walks have a maximum of 3 spaces, so available + taken should add up to 3.
-# Evening solo walks: just the date and slot books it out, e.g. 2026-11-04|evening (any numbers after are ignored).
-# Walks not listed here show as Available without a space count.
-# Example rows:
-# 2026-11-06|morning|0|3
-# 2026-11-04|evening
+# Set availability by date using YYYY-MM-DD.
+# Group walks: YYYY-MM-DD|morning|available|taken (or afternoon).
+# Each group walk has 3 spaces; available + taken should total 3.
+# Evening walks: YYYY-MM-DD|evening marks the slot as busy.
+# No row means the walk is available. Unlisted group walks have no space count.
 2026-10-24|morning|3|0
+2026-10-30|morning|0|3
+2026-10-30|afternoon|0|3
+2026-10-31|morning|2|1
+2026-10-31|afternoon|1|2
 2026-11-06|morning|0|3
