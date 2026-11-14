@@ -2,8 +2,8 @@ import Link from "next/link";
 import HomeLink from "./home-link";
 import LogoBadge from "./logo-badge";
 import MobileMenu from "./mobile-menu";
-import { homeLinks } from "./navigation-links";
-import { siteConfig } from "./site-config";
+import { homeLinks } from "../../_config/navigation-links";
+import { siteConfig } from "../../_config/site-config";
 
 export default function SiteHeader() {
   return (

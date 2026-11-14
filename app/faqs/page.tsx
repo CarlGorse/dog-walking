@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import SectionHeading from "../components/section-heading";
+import SectionHeading from "../_components/shared/section-heading";
 import FaqList from "./faq-list";
-import SiteFooter from "../site-footer";
-import SiteHeader from "../site-header";
+import SiteFooter from "../_components/shared/site-footer";
+import SiteHeader from "../_components/shared/site-header";
 
 export const metadata: Metadata = {
   title: "FAQs",

@@ -1,4 +1,4 @@
-import { siteConfig } from "./site-config";
+import { siteConfig } from "../../_config/site-config";
 
 export default function SiteFooter() {
   return (

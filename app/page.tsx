@@ -1,12 +1,12 @@
-import SiteHeader from "./site-header";
-import SiteFooter from "./site-footer";
-import AvailabilitySection from "./components/availability-section";
-import ContactSection from "./components/contact-section";
-import CountrysideSection from "./components/countryside-section";
-import HeroImageSection from "./components/hero-image-section";
-import IntroSection from "./components/intro-section";
-import PartTimeSection from "./components/part-time-section";
-import ServicesSection from "./components/services-section";
+import SiteHeader from "./_components/shared/site-header";
+import SiteFooter from "./_components/shared/site-footer";
+import AvailabilitySection from "./_components/home/availability-section";
+import ContactSection from "./_components/home/contact-section";
+import CountrysideSection from "./_components/home/countryside-section";
+import HeroImageSection from "./_components/home/hero-image-section";
+import IntroSection from "./_components/home/intro-section";
+import PartTimeSection from "./_components/home/part-time-section";
+import ServicesSection from "./_components/home/services-section";
 
 export default function Home() {
   return (
@@ -19,10 +19,16 @@ export default function Home() {
       <ServicesSection />
       <AvailabilitySection />
       <ContactSection />
-      <section aria-labelledby="credentials-heading" className="bg-amber-200 py-8">
+      <section
+        aria-labelledby="credentials-heading"
+        className="bg-amber-200 py-8"
+      >
         <div className="content-container flex flex-col items-center gap-3 text-center">
-          <h2 id="credentials-heading" className="text-sm font-bold uppercase tracking-[0.18em] text-brand-green-800">
-            Checks and credentials
+          <h2
+            id="credentials-heading"
+            className="text-sm font-bold uppercase tracking-[0.18em] text-brand-green-800"
+          >
+            Credentials
           </h2>
           <div className="flex items-center gap-3">
             <span

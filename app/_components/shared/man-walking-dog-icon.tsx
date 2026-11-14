@@ -39,10 +39,17 @@ export default function ManWalkingDogIcon(props: SVGProps<SVGSVGElement>) {
         strokeLinecap="round"
         fill="none"
       />
-      <circle cx="22" cy="14" r="5.5" fill="#c99a72" />
+      <circle
+        cx="22"
+        cy="14"
+        r="5.5"
+        fill="#c99a72"
+        transform="translate(0 1.5)"
+      />
       <path
         d="M16.5 14c.2-4 2.4-6.5 5.7-6.5 2.8 0 4.7 1.8 5.1 4.7-2.2-1.1-4.8-1.3-7.3-.4z"
         fill="#55483d"
+        transform="translate(0 1.5)"
       />
       <path
         d="M40 39c2-2 6-3 9-1l3 3-2 4H41l-2-3z"

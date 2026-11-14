@@ -1,11 +1,11 @@
 import Link from "next/link";
-import SectionHeading from "./section-heading";
+import SectionHeading from "../shared/section-heading";
 
 const services = [
   {
     title: "Long and short walks",
     description:
-          "Long country walks that may be in a friendly small group or one-to-one, and short walks in your local area.",
+      "Long country walks that may be in a friendly small group or one-to-one, and short walks in your local area.",
     icon: "🐾",
   },
   {
@@ -21,7 +21,7 @@ const services = [
     icon: "🚐",
   },
   {
-    title: "Safety and tracking",
+    title: "Safety",
     description: "Secure transport and tracking while your dog is out.",
     icon: "🛡️",
   },

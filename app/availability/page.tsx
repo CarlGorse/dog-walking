@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import WalkCalendar from "../walk-calendar";
-import SiteFooter from "../site-footer";
-import SiteHeader from "../site-header";
+import WalkCalendar from "../_components/shared/walk-calendar";
+import SiteFooter from "../_components/shared/site-footer";
+import SiteHeader from "../_components/shared/site-header";
 
 export const metadata: Metadata = {
   title: "Availability",

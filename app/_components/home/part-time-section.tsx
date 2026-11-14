@@ -1,4 +1,4 @@
-import SectionHeading from "./section-heading";
+import SectionHeading from "../shared/section-heading";
 
 export default function PartTimeSection() {
   return (

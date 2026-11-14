@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, type TouchEvent } from "react";
-import SectionHeading from "./components/section-heading";
+import SectionHeading from "./section-heading";
 
 const maxGroupDogs = 3;
 const calendarEndDate = new Date(Date.UTC(2027, 2, 31));

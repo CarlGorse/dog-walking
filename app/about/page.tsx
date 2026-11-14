@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import SectionHeading from "../components/section-heading";
-import SiteFooter from "../site-footer";
-import SiteHeader from "../site-header";
-import { siteConfig } from "../site-config";
+import SectionHeading from "../_components/shared/section-heading";
+import SiteFooter from "../_components/shared/site-footer";
+import SiteHeader from "../_components/shared/site-header";
+import { siteConfig } from "../_config/site-config";
 
 export const metadata: Metadata = {
   title: "Me & Alfie",

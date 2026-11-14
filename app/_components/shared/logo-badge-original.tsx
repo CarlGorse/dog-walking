@@ -1,5 +1,5 @@
 import AlfieIcon from "./alfie-icon";
-import { siteConfig } from "./site-config";
+import { siteConfig } from "../../_config/site-config";
 
 export default function LogoBadge({ className }: { className?: string }) {
   return (

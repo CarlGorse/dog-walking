@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import HomeLink from "./home-link";
-import { homeLinks } from "./navigation-links";
+import { homeLinks } from "../../_config/navigation-links";
 
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);

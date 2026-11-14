@@ -1,5 +1,5 @@
 import ManWalkingDogIcon from "./man-walking-dog-icon";
-import { siteConfig } from "./site-config";
+import { siteConfig } from "../../_config/site-config";
 
 export default function LogoBadge({ className }: { className?: string }) {
   return (
@@ -36,7 +36,7 @@ export default function LogoBadge({ className }: { className?: string }) {
           {siteConfig.tagline}
         </textPath>
       </text>
-      <ManWalkingDogIcon x="18" y="23" width="64" height="64" />
+      <ManWalkingDogIcon x="15" y="18" width="66" height="66" />
     </svg>
   );
 }

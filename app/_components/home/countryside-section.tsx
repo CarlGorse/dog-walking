@@ -1,5 +1,5 @@
 import Image from "next/image";
-import SectionHeading from "./section-heading";
+import SectionHeading from "../shared/section-heading";
 
 export default function CountrysideSection() {
   return (

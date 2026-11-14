@@ -1,5 +1,5 @@
 import Link from "next/link";
-import SectionHeading from "./section-heading";
+import SectionHeading from "../shared/section-heading";
 
 const availability = [
   {
