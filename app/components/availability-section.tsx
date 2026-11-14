@@ -13,7 +13,7 @@ const availability = [
     durationDetails: "of walking, plus travel time.",
     pickupTime: "Pickup time from 08:00, return time from 11:30",
     note: "Up to 3 dogs per walk",
-    householdNote: "Dogs may be from different households",
+    householdNote: "Dogs may be placed from different households",
   },
   {
     period: "Afternoon",
@@ -26,7 +26,7 @@ const availability = [
     durationDetails: "of walking, plus travel time.",
     pickupTime: "Pickup time from 12:30, return time from 16:00",
     note: "Up to 3 dogs per walk",
-    householdNote: "Dogs may be from different households",
+    householdNote: "Dogs may be placed from different households",
   },
   {
     period: "Evening",
@@ -38,7 +38,7 @@ const availability = [
     days: "(Mon to Sun)",
     window: "Between 17:30 and 21:00",
     note: "Up to 2 dogs per walk",
-    householdNote: "Dogs may be from different households",
+    householdNote: "Dogs may be placed from different households",
     duration: "1 hour",
     durationDetails: "of walking.",
   },
