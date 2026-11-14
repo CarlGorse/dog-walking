@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Out and About Dog Walking
 
-## Getting Started
+The website for Out and About, a local dog-walking business based in Midsomer
+Norton. It gives prospective customers information about the walks, the service
+area, booking, and the dogs' availability.
 
-First, run the development server:
+## Run locally
+
+Install dependencies and start the development server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Useful project commands:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run build
+npm run start
+```
 
-## Learn More
+`npm run start` serves a production build created with `npm run build`.
 
-To learn more about Next.js, take a look at the following resources:
+## Pages and data
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `/` - Homepage with the service overview, walks, and prices.
+- `/about` - About the walker and Alfie.
+- `/availability` - Calendar of group and evening walk availability.
+- `/faqs` - Customer FAQs.
+- `/blog` - Articles and updates.
+- `/calendar` - Redirects to `/availability`.
+- `/api/availability` - Returns the availability data as JSON.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The calendar reads [`public/availability.txt`](./public/availability.txt).
+Edit that file to update the schedule; its opening comments explain the row
+format and availability rules.
 
-## Deploy on Vercel
+## Project layout
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `app/` contains the routes and the root layout.
+- `app/_components/home/` contains homepage sections.
+- `app/_components/shared/` contains UI shared across pages.
+- `app/_config/` contains site details and navigation links.
+- `public/` contains images and the availability data file.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Update the business name, tagline, full name, or Facebook URL in
+[`app/_config/site-config.ts`](./app/_config/site-config.ts).
