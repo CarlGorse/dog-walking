@@ -43,11 +43,11 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-      <section className="bg-emerald-900 py-12 text-white sm:py-16">
+      <section className="bg-brand-green-900 py-12 text-white sm:py-16">
         <div className="content-container grid gap-8                 md:grid-cols-[240px_minmax(0,42rem)] md:items-center">
                   <div className="max-w-2xl md:order-2">
             <SectionHeading eyebrow="Dawn" title="Guardian of the Books & Details" tone="light" />
-            <p className="mt-4 text-lg leading-8 text-emerald-50">
+            <p className="mt-4 text-lg leading-8 text-brand-green-50">
               Dawn is Carl&apos;s wife and helps behind the scenes, including taking care of the business accounts, alongside her own main job in finance. She&apos;s also our quality assurance, making sure everything we do is up to scratch.
             </p>
           </div>

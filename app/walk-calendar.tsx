@@ -345,7 +345,7 @@ export default function WalkCalendar() {
           )}
         </div>
 
-        <div className="rounded-[2rem] border border-emerald-900 bg-emerald-900 p-6 shadow-lg">
+        <div className="rounded-[2rem] border border-brand-green-900 bg-brand-green-900 p-6 shadow-lg">
           <div className="mb-6 flex items-center justify-center gap-3 sm:justify-between">
             <span className="hidden sm:flex">
               <ChevronButton
@@ -375,7 +375,7 @@ export default function WalkCalendar() {
             </p>
           )}
 
-          <p className="mb-4 text-center text-sm font-medium text-emerald-100 sm:hidden">
+          <p className="mb-4 text-center text-sm font-medium text-brand-green-100 sm:hidden">
             Swipe left or right to change period
           </p>
 
@@ -467,7 +467,7 @@ export default function WalkCalendar() {
                           !availabilityLoaded || availabilityError
                             ? "bg-stone-100 text-stone-600"
                             : isAvailable
-                              ? "bg-emerald-100 text-emerald-900 ring-1 ring-emerald-300"
+                              ? "bg-brand-green-100 text-brand-green-900 ring-1 ring-brand-green-300"
                               : "bg-amber-200 text-amber-900 ring-1 ring-amber-400";
 
                         return (
@@ -541,9 +541,9 @@ function ChevronButton({
       onClick={onClick}
       disabled={disabled}
       aria-label={`Go to ${direction} period`}
-      className={`flex shrink-0 items-center justify-center rounded-full bg-white text-emerald-900 transition hover:bg-emerald-50 disabled:cursor-not-allowed disabled:opacity-50 ${
+      className={`flex shrink-0 items-center justify-center rounded-full bg-white text-brand-green-900 transition hover:bg-brand-green-50 disabled:cursor-not-allowed disabled:opacity-50 ${
         floating
-          ? "pointer-events-auto h-10 w-10 shadow-lg ring-2 ring-emerald-900/20"
+          ? "pointer-events-auto h-10 w-10 shadow-lg ring-2 ring-brand-green-900/20"
           : "h-11 w-11"
       }`}
     >

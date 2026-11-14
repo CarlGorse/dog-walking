@@ -35,7 +35,7 @@ export default function SiteHeader() {
         href="https://wa.me/4475817983387"
         target="_blank"
         rel="noopener noreferrer"
-        className="hidden rounded-full bg-emerald-600 px-5 py-2.5 text-sm font-bold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-emerald-500 xl:inline-flex"
+        className="hidden rounded-full bg-brand-green-600 px-5 py-2.5 text-sm font-bold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-brand-green-500 xl:inline-flex"
       >
         Book on WhatsApp
       </a>

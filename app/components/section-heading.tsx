@@ -8,7 +8,7 @@ type SectionHeadingProps = {
 
 const eyebrowTones = {
   amber: "text-amber-700",
-  emerald: "text-emerald-700",
+  emerald: "text-brand-green-700",
   stone: "text-stone-700",
   light: "text-amber-300",
 };

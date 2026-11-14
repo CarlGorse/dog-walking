@@ -75,7 +75,7 @@ export default function ServicesSection() {
           Want more details? Have a read of our{" "}
           <Link
             href="/faqs"
-            className="font-bold text-emerald-800 underline underline-offset-4 hover:text-emerald-600"
+            className="font-bold text-brand-green-800 underline underline-offset-4 hover:text-brand-green-600"
           >
             FAQs
           </Link>

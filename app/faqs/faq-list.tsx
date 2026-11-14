@@ -175,7 +175,7 @@ export default function FaqList() {
               onClick={() => setSelected(category)}
               className={`rounded-full border px-4 py-2 text-sm font-bold transition ${
                 isSelected
-                  ? "border-emerald-800 bg-emerald-800 text-white shadow-sm"
+                  ? "border-brand-green-800 bg-brand-green-800 text-white shadow-sm"
                   : "border-amber-300 bg-white text-stone-700 hover:bg-amber-50"
               }`}
             >
@@ -189,7 +189,7 @@ export default function FaqList() {
         {sections.map((section) => (
           <div key={section.title ?? "all"} className="space-y-4">
             {section.title && (
-              <h2 className="pt-4 text-sm font-black uppercase tracking-wide text-emerald-800">
+              <h2 className="pt-4 text-sm font-black uppercase tracking-wide text-brand-green-800">
                 {section.title}
               </h2>
             )}
@@ -200,7 +200,7 @@ export default function FaqList() {
                   key={faq.question}
                   name="faq"
                   className={`group content-card content-card-compact border-l-[6px]! border-l-emerald-700! border-amber-200! shadow-md transition hover:shadow-lg ${
-                    index % 2 === 0 ? "bg-white!" : "bg-emerald-100!"
+                    index % 2 === 0 ? "bg-white!" : "bg-brand-green-100!"
                   }`}
                 >
                   <summary className="flex cursor-pointer list-none items-start justify-between gap-4 [&::-webkit-details-marker]:hidden">
@@ -209,7 +209,7 @@ export default function FaqList() {
                     </h3>
                     <span
                       aria-hidden="true"
-                      className="mt-1.5 flex h-5 w-5 shrink-0 items-center justify-center text-stone-400 transition group-hover:text-emerald-700 group-open:rotate-180"
+                      className="mt-1.5 flex h-5 w-5 shrink-0 items-center justify-center text-stone-400 transition group-hover:text-brand-green-700 group-open:rotate-180"
                     >
                       <svg
                         viewBox="0 0 20 20"

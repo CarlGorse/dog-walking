@@ -55,7 +55,7 @@ export default function BlogPage() {
         {articles.map((article) => (
           <article key={article.id} id={article.id} className="border-b border-stone-200 py-10 last:border-b-0">
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
-              <p className="font-bold uppercase tracking-[0.2em] text-emerald-700">{article.category}</p>
+              <p className="font-bold uppercase tracking-[0.2em] text-brand-green-700">{article.category}</p>
               <time dateTime={article.publishedAt} className="text-stone-500">
                 {new Intl.DateTimeFormat("en-GB", {
                   day: "numeric",

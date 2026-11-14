@@ -52,12 +52,12 @@ export default function AvailabilitySection() {
           eyebrow="Walks and prices"
           title="Find a walk and time that works for you."
         />
-        <div className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-2 rounded-2xl bg-emerald-900 px-5 py-4 text-white">
+        <div className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-2 rounded-2xl bg-brand-green-900 px-5 py-4 text-white">
           <span className="text-2xl" aria-hidden="true">
             ❄️
           </span>
           <p className="text-xl font-black sm:text-2xl">Winter schedule</p>
-          <p className="text-sm font-medium text-emerald-100">
+          <p className="text-sm font-medium text-brand-green-100">
             Now until the end of March. A spring and summer schedule will
             follow.
           </p>
@@ -100,12 +100,12 @@ export default function AvailabilitySection() {
               </h3>
               <div className="mt-2">
                 <p className="leading-none">
-                  <span className="text-4xl font-black text-emerald-700">
+                  <span className="text-4xl font-black text-brand-green-700">
                     {slot.price}
                   </span>
                 </p>
                 {slot.priceNote && (
-                  <p className="mt-1 text-sm font-bold text-emerald-800">
+                  <p className="mt-1 text-sm font-bold text-brand-green-800">
                     {slot.priceNote}
                   </p>
                 )}
@@ -132,7 +132,7 @@ export default function AvailabilitySection() {
           Want more details? Have a read of our{" "}
           <Link
             href="/faqs"
-            className="font-bold text-emerald-800 underline underline-offset-4 hover:text-emerald-600"
+            className="font-bold text-brand-green-800 underline underline-offset-4 hover:text-brand-green-600"
           >
             FAQs
           </Link>

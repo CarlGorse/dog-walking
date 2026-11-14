@@ -80,7 +80,7 @@ export default function MobileMenu() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setIsOpen(false)}
-            className="mt-1 rounded-xl bg-emerald-600 px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-emerald-500"
+            className="mt-1 rounded-xl bg-brand-green-600 px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-brand-green-500"
           >
             Book on WhatsApp
           </a>
