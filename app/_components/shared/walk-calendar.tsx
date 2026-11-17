@@ -47,8 +47,6 @@ const getWeekStart = (date: Date) => {
 
 const calendarEndWeekStart = getWeekStart(calendarEndDate);
 
-const getCurrentWeekStart = () => getWeekStart(new Date());
-
 const parseAvailability = (contents: string): Availability => {
   const availability: Availability = {};
 
@@ -167,7 +165,7 @@ const getRemainingSlots = (
 
 // The first week shown skips the current week once all of its slots have passed.
 const getFirstWeekStart = (now: { date: string; minutes: number }) => {
-  const currentWeekStart = getCurrentWeekStart();
+  const currentWeekStart = getWeekStart(new Date(`${now.date}T00:00:00Z`));
   const hasSlotsLeft = Array.from({ length: 7 }, (_, index) => {
     const day = new Date(currentWeekStart);
     day.setUTCDate(day.getUTCDate() + index);
@@ -196,9 +194,10 @@ export default function WalkCalendar() {
     let isActive = true;
 
     // Deferred to the client so the current date isn't baked into the prerender.
+    const initialNow = getUkNow();
     // eslint-disable-next-line react-hooks/set-state-in-effect
-    setWeekStart(getFirstWeekStart(getUkNow()));
-    setNow(getUkNow());
+    setWeekStart(getFirstWeekStart(initialNow));
+    setNow(initialNow);
     const clock = setInterval(() => setNow(getUkNow()), 60_000);
 
     fetch("/api/availability", { cache: "no-store" })
@@ -232,16 +231,17 @@ export default function WalkCalendar() {
     };
   }, []);
 
-  const firstWeekStart = getFirstWeekStart(now ?? getUkNow());
+  const firstWeekStart = now && getFirstWeekStart(now);
   const isCurrentWeek =
-    !!weekStart && weekStart.getTime() <= firstWeekStart.getTime();
+    !firstWeekStart || (!!weekStart && weekStart.getTime() <= firstWeekStart.getTime());
   const isLastWeek =
     !!weekStart && weekStart.getTime() >= calendarEndWeekStart.getTime();
 
   const changeWeek = (offset: number) => {
+    const earliestWeek = offset < 0 ? getFirstWeekStart(getUkNow()) : null;
     setWeekStart((currentWeek) => {
       if (!currentWeek) return currentWeek;
-      if (offset < 0 && currentWeek.getTime() <= getFirstWeekStart(getUkNow()).getTime())
+      if (earliestWeek && currentWeek.getTime() <= earliestWeek.getTime())
         return currentWeek;
       const nextWeek = new Date(
         Date.UTC(
