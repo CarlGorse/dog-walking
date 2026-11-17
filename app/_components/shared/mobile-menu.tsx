@@ -1,9 +1,7 @@
 'use client';
 
 import { useState } from "react";
-import Link from "next/link";
-import HomeLink from "./home-link";
-import { homeLinks } from "../../_config/navigation-links";
+import NavigationItems from "./navigation-items";
 
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,59 +29,7 @@ export default function MobileMenu() {
           aria-label="Mobile navigation"
           className="absolute right-0 top-full z-50 mt-3 flex w-60 flex-col rounded-2xl border border-amber-200 bg-white p-2 shadow-xl"
         >
-          <HomeLink
-            onClick={() => setIsOpen(false)}
-            className="rounded-xl px-4 py-3 text-sm font-semibold text-stone-700 transition hover:bg-amber-50 hover:text-stone-900"
-          >
-            Home
-          </HomeLink>
-          {homeLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => setIsOpen(false)}
-              className="rounded-xl px-4 py-3 text-sm font-semibold text-stone-700 transition hover:bg-amber-50 hover:text-stone-900"
-            >
-              {link.label}
-            </Link>
-          ))}
-          <Link
-            href="/about"
-            onClick={() => setIsOpen(false)}
-            className="rounded-xl px-4 py-3 text-sm font-semibold text-stone-700 transition hover:bg-amber-50 hover:text-stone-900"
-          >
-            About us
-          </Link>
-          <Link
-            href="/availability"
-            onClick={() => setIsOpen(false)}
-            className="rounded-xl px-4 py-3 text-sm font-semibold text-stone-700 transition hover:bg-amber-50 hover:text-stone-900"
-          >
-            Availability
-          </Link>
-                    <Link
-            href="/faqs"
-            onClick={() => setIsOpen(false)}
-            className="rounded-xl px-4 py-3 text-sm font-semibold text-stone-700 transition hover:bg-amber-50 hover:text-stone-900"
-          >
-            FAQs
-          </Link>
-          <Link
-            href="/blog"
-            onClick={() => setIsOpen(false)}
-            className="rounded-xl px-4 py-3 text-sm font-semibold text-stone-700 transition hover:bg-amber-50 hover:text-stone-900"
-          >
-            Blog
-          </Link>
-          <a
-            href="https://wa.me/4475817983387"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setIsOpen(false)}
-            className="mt-1 rounded-xl bg-brand-green-600 px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-brand-green-500"
-          >
-            Book on WhatsApp
-          </a>
+          <NavigationItems variant="mobile" onSelect={() => setIsOpen(false)} />
         </nav>
       )}
     </div>
