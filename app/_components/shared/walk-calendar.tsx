@@ -328,8 +328,10 @@ export default function WalkCalendar() {
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <div className="mb-8">
           <SectionHeading
-            eyebrow="Winter schedule"
+            eyebrow="Availability"
             title="Days, times and spaces."
+            as="h1"
+            size="large"
           />
           <p className="mt-3 max-w-2xl text-stone-700">
             This is our winter schedule, running up to {calendarEndDateLabel}.
@@ -347,7 +349,11 @@ export default function WalkCalendar() {
 
         <div className="rounded-[2rem] border border-brand-green-900 bg-brand-green-900 p-6 shadow-lg">
           <div className="mb-6 flex items-center justify-center gap-3 sm:justify-between">
-            <span className="hidden sm:flex">
+            <span className="hidden items-center gap-2 sm:flex">
+              <FirstWeekButton
+                onClick={() => setWeekStart(firstWeekStart)}
+                disabled={!weekStart || isCurrentWeek}
+              />
               <ChevronButton
                 direction="previous"
                 onClick={() => changeWeek(-1)}
@@ -381,12 +387,19 @@ export default function WalkCalendar() {
 
           <div className="relative">
             <div className="pointer-events-none sticky top-[45vh] z-10 -mx-8 flex h-0 items-center justify-between sm:hidden">
-              <ChevronButton
-                direction="previous"
-                onClick={() => changeWeek(-1)}
-                disabled={!weekStart || isCurrentWeek}
-                floating
-              />
+              <span className="pointer-events-auto flex items-center gap-2">
+                <FirstWeekButton
+                  onClick={() => setWeekStart(firstWeekStart)}
+                  disabled={!weekStart || isCurrentWeek}
+                  floating
+                />
+                <ChevronButton
+                  direction="previous"
+                  onClick={() => changeWeek(-1)}
+                  disabled={!weekStart || isCurrentWeek}
+                  floating
+                />
+              </span>
               <ChevronButton
                 direction="next"
                 onClick={() => changeWeek(1)}
@@ -521,6 +534,44 @@ export default function WalkCalendar() {
         </div>
       </div>
     </section>
+  );
+}
+
+function FirstWeekButton({
+  onClick,
+  disabled,
+  floating = false,
+}: {
+  onClick: () => void;
+  disabled: boolean;
+  floating?: boolean;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      disabled={disabled}
+      aria-label="Go to first available week"
+      title="Go to first available week"
+      className={`flex shrink-0 items-center justify-center rounded-full bg-white text-brand-green-900 transition hover:bg-brand-green-50 disabled:cursor-not-allowed disabled:opacity-50 ${
+        floating
+          ? "h-10 w-10 shadow-lg ring-2 ring-brand-green-900/20"
+          : "h-11 w-11"
+      }`}
+    >
+      <svg
+        viewBox="0 0 24 24"
+        className="h-6 w-6"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M11 5l-7 7 7 7M20 5l-7 7 7 7" />
+      </svg>
+    </button>
   );
 }
 

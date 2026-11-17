@@ -21,7 +21,7 @@ export default function ContactSection() {
             href="tel:+4475817983387"
             className="rounded-full border border-white px-6 py-3 text-center text-sm font-bold text-white transition hover:bg-white hover:text-brand-green-900"
           >
-            Call 07581 7983387
+            <span aria-hidden="true">📞</span> Call us
           </a>
         </div>
       </div>
